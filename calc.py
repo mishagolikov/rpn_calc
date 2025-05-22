@@ -5,6 +5,10 @@ class RPNCalculator:
         self.stack = []
 
     def evaluate(self, tokens):
+        """
+        Evaluate a list of RPN tokens.
+        Supports 4 basic arithmetic operations: +, -, *, /
+        """
         # Process each token in the input
         for token in tokens:
             try:
@@ -44,8 +48,17 @@ class RPNCalculator:
 
 # Main def for running the calculator in a loop the user can communicate with
 def main():
+    """
+    Launch the RPN calculator loop on command line for user to interact with.
+    Accepts user input until 'q' or 'Ctrl+D' is entered.
+    """
     # Create an instance of the calculator
     calc = RPNCalculator()
+
+    # Intro message for user
+    print("Welcome to Misha's RPN Calculator.")
+    print("Enter numbers and operators (+ - * /), one per line or space-separated.")
+    print("Type 'q' to quit. Press Ctrl+D (EOF) to exit.")
 
     while True:
         try:
@@ -53,6 +66,7 @@ def main():
             line = input("> ").strip()
         except EOFError:
             # Allow exit when pressing Ctrl+D (End of File)
+            print("\nExiting on EOF.")
             break
 
         # Quit if user enters 'q'
