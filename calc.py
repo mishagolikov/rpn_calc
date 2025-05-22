@@ -1,3 +1,16 @@
+import math
+
+# Util function to print the ASCII banner
+def print_ascii():
+    print(r"""
+___  ____     _           _      ____________ _   _   _____       _      
+|  \/  (_)   | |         ( )     | ___ \ ___ \ \ | | /  __ \     | |     
+| .  . |_ ___| |__   __ _|/ ___  | |_/ / |_/ /  \| | | /  \/ __ _| | ___ 
+| |\/| | / __| '_ \ / _` | / __| |    /|  __/| . ` | | |    / _` | |/ __|
+| |  | | \__ \ | | | (_| | \__ \ | |\ \| |   | |\  | | \__/\ (_| | | (__ 
+\_|  |_/_|___/_| |_|\__,_| |___/ \_| \_\_|   \_| \_/  \____/\__,_|_|\___|
+    """)
+
 # Define the RPNCalculator class for the calculator's logic
 class RPNCalculator:
     def __init__(self):
@@ -50,22 +63,23 @@ class RPNCalculator:
 def main():
     """
     Launch the RPN calculator loop on command line for user to interact with.
-    Accepts user input until 'q' or 'Ctrl+D' is entered.
+    Accepts user input until 'q' or 'Ctrl+D' is entered (or 'Ctrl+Z' on Windows).
     """
-    # Create an instance of the calculator
-    calc = RPNCalculator()
-
     # Intro message for user
+    print_ascii()
     print("Welcome to Misha's RPN Calculator.")
     print("Enter numbers and operators (+ - * /), one per line or space-separated.")
-    print("Type 'q' to quit. Press Ctrl+D (EOF) to exit.")
+    print("Type 'q' to quit. Press Ctrl+D (Unix) or Ctrl+Z then Enter (Windows) to exit.")
+
+    # Create an instance of the calculator
+    calc = RPNCalculator()
 
     while True:
         try:
             # Read input from the user
             line = input("> ").strip()
         except EOFError:
-            # Allow exit when pressing Ctrl+D (End of File)
+            # Allow exit when pressing Ctrl+D (or Ctrl+Z then Enter on Windows)
             print("\nExiting on EOF.")
             break
 
