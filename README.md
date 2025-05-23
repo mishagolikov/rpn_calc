@@ -4,13 +4,13 @@ This is a simple Reverse Polish Notation (RPN) calculator implemented in Python.
 
 ---
 
-## 🚀 High-Level Description
+## High-Level Description
 
-The RPN Calculator operates via the command line, accepting input tokens in Reverse Polish Notation. Instead of requiring parentheses or operator precedence, users enter operands followed by operators (e.g., `5 8 +`) in a single line. Users can also enter operands and operators on seperate lines after adding them to the stack. The calculator evaluates input line by line and prints the result at the top of the stack.
+The RPN Calculator operates via the command line, accepting input tokens in Reverse Polish Notation. Instead of requiring parentheses or operator precedence, users enter operands followed by operators (e.g., `3 9 +`) in a single line. Users can also enter operands and operators on seperate lines after adding them to the stack. The calculator evaluates input line by line and prints the result at the top of the stack.
 
 ---
 
-## 🧠 Technical Choices & Reasoning
+## Technical Choices & Reasoning
 
 - **Language:** Python 3 — for its clean syntax and easy development of command line tools.
 - **Architecture:** 
@@ -24,7 +24,7 @@ The RPN Calculator operates via the command line, accepting input tokens in Reve
 
 ---
 
-## ⚖️ Trade-offs & Future Improvements
+## Trade-offs & Future Improvements
 
 ### Trade-offs:
 - The calculator is intentionally minimal and does not support advanced math functions, variables, or command history to maintain simplicity and clarity.
@@ -38,7 +38,7 @@ The RPN Calculator operates via the command line, accepting input tokens in Reve
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 1. Make sure you have Python 3 installed:
    ```bash
@@ -91,6 +91,6 @@ rpn_calc/
 
 ---
 
-## ✍️ Author
+## Author
 
 Created by Misha Golikov
